@@ -11,5 +11,10 @@ JOIN
 -- join subscriptions table, alias to s    
 JOIN 
     subscriptions s ON o.subscription_id = s.subscription_id
+WHERE 
+    o.order_status = 'unpaid'
+    AND s.description = 'Fashion Magazine'
+GROUP BY 
+    c.customer_name;
 
 
